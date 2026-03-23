@@ -1,0 +1,263 @@
+/* 🌿 NATURE GREEN THEME */
+
+:root {
+    --bg-color: linear-gradient(to right, #ffe0cc, #fff5ee);
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --text-color: #2c2c2c;
+
+    --primary: #ff7a18;   /* main orange */
+    --secondary: #ffb347; /* soft orange */
+    --accent: #ff5722;    /* deep orange */
+
+    --border-color: #ffd1b3;
+}
+
+/* 🌙 NIGHT MODE */
+body.night-mode {
+    --bg-color: linear-gradient(to right, #2b1a12, #3b2418);
+    --card-bg: rgba(40, 25, 15, 0.9);
+    --text-color: #ffe0cc;
+
+    --primary: #ff8c42;
+    --secondary: #ff6f00;
+}
+
+/* GLOBAL */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* 🌿 NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: var(--primary);
+    color: white;
+}
+
+.navbar nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* BUTTONS */
+.checkout-btn {
+    background: linear-gradient(135deg, #ff7a18, #ffb347);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 30px;
+    width: 100%;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 122, 24, 0.3);
+    transition: all 0.3s ease;
+}
+
+.checkout-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 122, 24, 0.5);
+}
+
+.checkout-btn:active {
+    transform: scale(0.98);
+}
+.qty-btn {
+    background: var(--accent);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+/* 🌿 CARDS */
+.card, .summary-card, .product-card-ui {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* 🛒 CART LAYOUT */
+.cart-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 2rem;
+}
+
+@media (max-width: 850px) {
+    .cart-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 🌿 LOGIN PAGE */
+.auth-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: var(--bg-color);
+    z-index: 1;
+}
+
+.auth-container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('images/venom-logo.jpg') no-repeat center center;
+    background-size: 350px;
+    opacity: 0.3; /* Gives a nice watermark effect */
+    z-index: -1;
+}
+
+.login-box {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    width: 350px;
+}
+
+.login-box h1 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+/* INPUT GROUP */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* REMEMBER ME */
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+}
+
+/* 🌿 PRODUCT GRID */
+.home-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.product-card-ui {
+    text-align: center;
+    transition: 0.3s;
+}
+
+.product-card-ui:hover {
+    transform: translateY(-8px);
+    box-shadow:  0 10px 30px rgba(255, 122, 24, 0.3);
+}
+
+.product-card-ui img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* SECTION TITLE */
+.section-title {
+    margin: 30px 0 10px 0;
+    border-left: 5px solid var(--primary);
+    padding-left: 15px;
+}
+
+/* ❤️ SAVE ICON */
+.save-icon {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--primary);
+    background: cover;
+    border: none;
+}
+
+.save-icon:hover {
+    transform: scale(1.2);
+    color: var(--secondary);
+}
+
+/* 🌿 ICON BUTTONS */
+.icon-btn {
+    background: none;
+    border: 1px solid white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    color: white;
+}
+
+/* 🌿 SAVED DRAWER */
+.drawer {
+    position: fixed;
+    right: -400px;
+    top: 0;
+    width: 350px;
+    height: 100%;
+    background: var(--card-bg);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    transition: 0.4s;
+    z-index: 3000;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
+}
+
+.drawer.open {
+    right: 0;
+}
+
+.drawer-content {
+    padding: 20px;
+}
+
+/* ✨ FADE ANIMATION */
+#main-content {
+    animation: fadeIn 0.5s ease-in;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
